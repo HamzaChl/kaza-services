@@ -1,0 +1,9 @@
+import { useEffect, useState } from 'react'
+import { Link, NavLink } from 'react-router-dom'
+import * as Dialog from '@radix-ui/react-dialog'
+const links = [['/', 'Accueil'], ['/a-propos', 'L’entreprise'], ['/services', 'Expertises'], ['/contact', 'Contact']]
+export default function Nav() {
+  const [open, setOpen] = useState(false)
+  useEffect(() => { const media=window.matchMedia('(min-width: 821px)');const close=()=>{if(media.matches)setOpen(false)};media.addEventListener('change',close);return()=>media.removeEventListener('change',close)}, [])
+  return <header className="header"><div className="wrap nav-bar"><Link to="/" className="studio-wordmark" aria-label="Kaza Services, accueil"><img src="/logo-full.png" alt="Kaza Services" width="500" height="105" /></Link><nav className="studio-nav" aria-label="Navigation principale">{links.map(([to,label])=><NavLink key={to} to={to} end={to==='/'}>{label}</NavLink>)}</nav><a className="quote-link" href="mailto:info@kazaservices.be">Parlons de votre projet <span>↗</span></a><Dialog.Root open={open} onOpenChange={setOpen}><Dialog.Trigger className="studio-toggle" aria-label="Ouvrir le menu"><span/><span/></Dialog.Trigger><Dialog.Portal><Dialog.Overlay className="mobile-overlay"/><Dialog.Content className="mobile-sheet"><div className="mobile-top"><Dialog.Title><img className="mobile-brand" src="/logo-full.png" alt="Kaza Services" width="500" height="105" /></Dialog.Title><Dialog.Close aria-label="Fermer le menu">Fermer ×</Dialog.Close></div><Dialog.Description className="editorial-label">NAVIGATION / BELGIQUE</Dialog.Description><nav aria-label="Navigation mobile">{links.map(([to,label],i)=><Link key={to} to={to} onClick={()=>setOpen(false)}><small>0{i+1}</small>{label}<span>↗</span></Link>)}</nav><Link to="/couverture" onClick={()=>setOpen(false)} className="mobile-coverage">Notre couverture en Belgique ↗</Link></Dialog.Content></Dialog.Portal></Dialog.Root></div></header>
+}
