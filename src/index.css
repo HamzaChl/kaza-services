@@ -229,3 +229,5 @@ img{display:block;max-width:100%}
 }
 @media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important}}
+
+body{font-variant-emoji:text}

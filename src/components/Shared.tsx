@@ -15,7 +15,7 @@ export function PageIntro({ title, children }: { title: ReactNode; children: Rea
 export function ContactBand() {
   return <section className="contact-band"><div className="wrap">
     <span className="editorial-label">+ CONSTRUISONS LA SUITE</span>
-    <div className="contact-band-inner"><h2>Avançons.<br />Ensemble.</h2><div><p>Vous recherchez un partenaire pour la livraison de colis ou la distribution de presse ? Présentez-nous vos secteurs et vos besoins.</p><a href="mailto:info@kazaservices.be" className="btn btn-light">Parlons de votre projet ↗</a><Link to="/services" className="final-secondary">Explorer nos expertises ↗</Link></div></div>
+    <div className="contact-band-inner"><h2>Avançons.<br />Ensemble.</h2><div><p>Vous recherchez un partenaire pour la livraison de colis ou la distribution de presse ? Présentez-nous vos secteurs et vos besoins.</p><a href="mailto:info@kazaservices.be" className="btn btn-light">Parlons de votre projet ↗︎</a><Link to="/services" className="final-secondary">Explorer nos expertises ↗︎</Link></div></div>
   </div></section>
 }
 
